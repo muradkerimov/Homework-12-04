@@ -5,7 +5,7 @@ class CustomArray {
 
 
     MyLastIndexOf(search_Value) {
-        for (let i = this.length - 1; i >= 0; i--) {
+        for (let i = this.elements.length - 1; i >= 0; i--) {
             const value = this.elements[i];
 
             if (value === search_Value) {
@@ -17,7 +17,7 @@ class CustomArray {
     }
 
     MyIndexOf(search_Value) {
-        for (let i = 0; i < this.length; i++) {
+        for (let i = 0; i < this.elements.length; i++) {
             const value = this.elements[i];
 
             if (value === search_Value) {
@@ -54,11 +54,8 @@ class CustomArray {
     MyMap(callback) {
         const result = [];
 
-        for (let i = 0; i < this.length; i++) {
-            if (callback(this.elements[i])) {
-                
+        for (let i = 0; i < this.elements.length; i++) {
                 result[i] = callback(this.elements[i]);
-            }
         }
 
         return result;
@@ -67,7 +64,7 @@ class CustomArray {
     MyFilter(callback) {
         const result = [];
 
-        for (let i = 0; i < this.length; i++) {
+        for (let i = 0; i < this.elements.length; i++) {
             // let value = array[i];
 
             if (callback(this.elements[i])) {
@@ -92,5 +89,9 @@ let MyArr2 = new CustomArray("Murad", "Hamlet", "Ferid", "Agha");
 // console.log(MyArr1.MyIncludes(41));
 // console.log(MyArr1.MySome(elem=>elem>5));
 // console.log(MyArr2.MyJoin(',, '))
-// console.log(MyArr1.MyMap(elem=>elem55));
+// console.log(MyArr1.MyMap(elem=>elem + 5));
+// console.log(MyArr1.MyFilter(elem=>elem > 25));
+// console.log(MyArr1.MyLastIndexOf(41));
+// console.log(MyArr1.MyIndexOf(41));
+
 
